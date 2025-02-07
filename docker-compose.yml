@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mqtt-subscribe:
+    image: "mqtt-subscribe:v1"
+    container_name: mqtt-sub
+    network_mode: "host"
+    tty: true
+#    volumes: 
+#       - ./data:/data
+  mqtt-publish:
+    image: "mqtt-publish:v1"
+    container_name: mqtt-pub
+    network_mode: "host"
+    tty: true
+

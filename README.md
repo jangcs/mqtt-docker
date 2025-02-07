@@ -1,9 +1,9 @@
 # MQTT Broker(Mosquitto) 환경설정
 ## Mosquitto 설치
-```sh
-$ sudo apt-get update && sudo apt-get upgrage
-$ sudo apt-get install mosquitto
-$ sudo apt-get install mosquitto-clients # 생략 가능
+```console
+sudo apt-get update && sudo apt-get upgrage
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto-clients # 생략 가능
 ```
 
 ## Mosquitto 구동

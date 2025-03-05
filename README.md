@@ -101,13 +101,24 @@ services:
     container_name: mqtt-sub
     network_mode: "host"
     tty: true
-#    volumes: 
+#    volumes:
 #       - ./data:/data
   mqtt-publish:
     image: "mqtt-publish:v1"
     container_name: mqtt-pub
     network_mode: "host"
     tty: true
+#    volumes:
+#       - aimd_nas_volume:/data
+
+#volumes:
+#  aimd_nas_volume:
+#    driver: local
+#    driver_opts:
+#      type: "nfs"
+#      o: "addr=<NAS_IP>, rw"
+#      device: ":/nas_shared_folder"
+
 ```
 
 ``` sh

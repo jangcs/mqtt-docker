@@ -1,0 +1,16 @@
+FROM nvidia/cuda:12.2.2-base-ubuntu20.04
+#FROM python:3.8
+
+RUN apt update -y
+RUN apt install software-properties-common -y
+RUN add-apt-repository ppa:deadsnakes/ppa -y
+RUN apt install python3.8 -y
+RUN apt install python3-pip -y
+
+RUN pip3 install paho-mqtt
+RUN pip3 install etcd3
+COPY publish.py publish.py
+
+CMD python3 publish.py
+
+

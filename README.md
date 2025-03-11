@@ -72,6 +72,14 @@ COPY publish.py publish.py
 CMD python3 publish.py
 ```
 
+```sh
+$ docker build -t mqtt-publish:v1 .
+```
+
+```sh
+$ docker images
+```
+
 ### nvidia-docker 예제
 ```sh
 $ cat Dockerfile-nvidia
@@ -93,15 +101,6 @@ COPY publish.py publish.py
 
 CMD python3 publish.py
 
-```
-
-
-```sh
-$ docker build -t mqtt-publish:v1 .
-```
-
-```sh
-$ docker images
 ```
 
 ### Subscriber build
@@ -147,6 +146,8 @@ services:
     container_name: mqtt-sub
     network_mode: "host"
     tty: true
+    environment: 
+       PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
 #    volumes:
 #       - ./data:/data
   mqtt-publish:
@@ -154,6 +155,8 @@ services:
     container_name: mqtt-pub
     network_mode: "host"
     tty: true
+    environment: 
+       PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: python
 #    volumes:
 #       - aimd_nas_volume:/data
 
